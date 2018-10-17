@@ -35,7 +35,7 @@ namespace Duple
                             let path = Path.GetFullPath(file)
                             let size = new FileInfo(file).Length
                             select new {name,date,path,size};
-            var reg = new Regex(@"[a-zA-Z]{2,5}-?\d{0,3}");
+            var reg = new Regex(@"[a-zA-Z]{2,5}-?\d{0,3}[ABab]?");
             var last = "";
             foreach (var item in videos.OrderBy(item => reg.Match(item.name).Value))
             {
